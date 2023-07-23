@@ -32,10 +32,6 @@ jobs:
           node-version: 18
           cache: 'npm'
           cache-dependency-path: package-lock.json
-      - name: Build
-        run: |
-          npm ci
-          npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
