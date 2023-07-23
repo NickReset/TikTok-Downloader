@@ -32,5 +32,4 @@ app.get('/video/download', async (req, res) => {
         return res.status(400).json({ error: 'Invalid URL' });
     }
 });
-
 app.listen(3000, () => console.log('Server started'));
