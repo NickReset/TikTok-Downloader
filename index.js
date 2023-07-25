@@ -12,7 +12,7 @@ app.get('/video/download', async (req, res) => {
 
     if(!url) return res.status(400).json({ error: 'Missing URL parameter' });
 
-    const vaildUrls = [ "https://www.tiktok.com/", "http://www.tiktok.com", "https://www.tiktok.com", "http://www.tiktok.com/"]
+    const vaildUrls = [ "https://www.tiktok.com/", "http://www.tiktok.com", "https://tiktok.com", "http://tiktok.com/"]
 
     if(!vaildUrls.some(vaildUrl => url.includes(vaildUrl))) return res.status(400).json({ error: 'Invalid URL' });
 
