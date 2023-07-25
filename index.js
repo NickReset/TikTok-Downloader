@@ -22,9 +22,10 @@ app.get('/video/download', async (req, res) => {
         
         const json = respone.data;
         const video = json.aweme_list[0].video.play_addr.url_list[0];
+        const videoID = json.aweme_list[0].aweme_id;
 
         res.setHeader('Content-Type', 'video/mp4');
-        res.setHeader('Content-Disposition', `attachment; filename=${id}.mp4`);
+        res.setHeader('Content-Disposition', `attachment; filename=${videoID}.mp4`);
 
         const response = await axios.get(video, { responseType: 'stream' });
         response.data.pipe(res);
