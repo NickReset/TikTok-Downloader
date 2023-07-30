@@ -1,8 +1,8 @@
 const axios = require('axios');
-
 const express = require('express');
-
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 app.use(express.json());
 app.use(express.static('public'));
 
@@ -33,4 +33,5 @@ app.get('/video/download', async (req, res) => {
         return res.status(400).json({ error: 'Invalid URL' });
     }
 });
-app.listen(3000, () => console.log('Server started'));
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
